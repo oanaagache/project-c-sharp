@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="AddPersonalData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cnp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="surname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="age" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phoneNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddPersonalDataResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AddAppointment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id_a" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="cnp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hour" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="instructor" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddAppointmentResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AddReviews">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id_r" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="id_a" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="stars" type="s1:char" />
+            <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddReviewsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DeletePersonalData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cnp" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeletePersonalDataResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DeleteAppointment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id_p" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteAppointmentResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ChangeAppointment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id_a" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hour" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="instructor" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeAppointmentResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ChangePersonalData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cnp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="surname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="age" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phoneNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangePersonalDataResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DeleteReview">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id_r" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteReviewResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ChangeReview">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id_r" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="id_a" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="stars" type="s1:char" />
+            <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeReviewResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="char">
+        <s:restriction base="s:unsignedShort" />
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AddPersonalDataSoapIn">
+    <wsdl:part name="parameters" element="tns:AddPersonalData" />
+  </wsdl:message>
+  <wsdl:message name="AddPersonalDataSoapOut">
+    <wsdl:part name="parameters" element="tns:AddPersonalDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddAppointmentSoapIn">
+    <wsdl:part name="parameters" element="tns:AddAppointment" />
+  </wsdl:message>
+  <wsdl:message name="AddAppointmentSoapOut">
+    <wsdl:part name="parameters" element="tns:AddAppointmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddReviewsSoapIn">
+    <wsdl:part name="parameters" element="tns:AddReviews" />
+  </wsdl:message>
+  <wsdl:message name="AddReviewsSoapOut">
+    <wsdl:part name="parameters" element="tns:AddReviewsResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeletePersonalDataSoapIn">
+    <wsdl:part name="parameters" element="tns:DeletePersonalData" />
+  </wsdl:message>
+  <wsdl:message name="DeletePersonalDataSoapOut">
+    <wsdl:part name="parameters" element="tns:DeletePersonalDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAppointmentSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteAppointment" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAppointmentSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteAppointmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangeAppointmentSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangeAppointment" />
+  </wsdl:message>
+  <wsdl:message name="ChangeAppointmentSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangeAppointmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangePersonalDataSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangePersonalData" />
+  </wsdl:message>
+  <wsdl:message name="ChangePersonalDataSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangePersonalDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteReviewSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteReview" />
+  </wsdl:message>
+  <wsdl:message name="DeleteReviewSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteReviewResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangeReviewSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangeReview" />
+  </wsdl:message>
+  <wsdl:message name="ChangeReviewSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangeReviewResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebService1Soap">
+    <wsdl:operation name="AddPersonalData">
+      <wsdl:input message="tns:AddPersonalDataSoapIn" />
+      <wsdl:output message="tns:AddPersonalDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAppointment">
+      <wsdl:input message="tns:AddAppointmentSoapIn" />
+      <wsdl:output message="tns:AddAppointmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddReviews">
+      <wsdl:input message="tns:AddReviewsSoapIn" />
+      <wsdl:output message="tns:AddReviewsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePersonalData">
+      <wsdl:input message="tns:DeletePersonalDataSoapIn" />
+      <wsdl:output message="tns:DeletePersonalDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAppointment">
+      <wsdl:input message="tns:DeleteAppointmentSoapIn" />
+      <wsdl:output message="tns:DeleteAppointmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeAppointment">
+      <wsdl:input message="tns:ChangeAppointmentSoapIn" />
+      <wsdl:output message="tns:ChangeAppointmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePersonalData">
+      <wsdl:input message="tns:ChangePersonalDataSoapIn" />
+      <wsdl:output message="tns:ChangePersonalDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteReview">
+      <wsdl:input message="tns:DeleteReviewSoapIn" />
+      <wsdl:output message="tns:DeleteReviewSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeReview">
+      <wsdl:input message="tns:ChangeReviewSoapIn" />
+      <wsdl:output message="tns:ChangeReviewSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebService1Soap" type="tns:WebService1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddPersonalData">
+      <soap:operation soapAction="http://tempuri.org/AddPersonalData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAppointment">
+      <soap:operation soapAction="http://tempuri.org/AddAppointment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddReviews">
+      <soap:operation soapAction="http://tempuri.org/AddReviews" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePersonalData">
+      <soap:operation soapAction="http://tempuri.org/DeletePersonalData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAppointment">
+      <soap:operation soapAction="http://tempuri.org/DeleteAppointment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeAppointment">
+      <soap:operation soapAction="http://tempuri.org/ChangeAppointment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePersonalData">
+      <soap:operation soapAction="http://tempuri.org/ChangePersonalData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteReview">
+      <soap:operation soapAction="http://tempuri.org/DeleteReview" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeReview">
+      <soap:operation soapAction="http://tempuri.org/ChangeReview" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebService1Soap12" type="tns:WebService1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddPersonalData">
+      <soap12:operation soapAction="http://tempuri.org/AddPersonalData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAppointment">
+      <soap12:operation soapAction="http://tempuri.org/AddAppointment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddReviews">
+      <soap12:operation soapAction="http://tempuri.org/AddReviews" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePersonalData">
+      <soap12:operation soapAction="http://tempuri.org/DeletePersonalData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAppointment">
+      <soap12:operation soapAction="http://tempuri.org/DeleteAppointment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeAppointment">
+      <soap12:operation soapAction="http://tempuri.org/ChangeAppointment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePersonalData">
+      <soap12:operation soapAction="http://tempuri.org/ChangePersonalData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteReview">
+      <soap12:operation soapAction="http://tempuri.org/DeleteReview" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeReview">
+      <soap12:operation soapAction="http://tempuri.org/ChangeReview" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService1">
+    <wsdl:port name="WebService1Soap" binding="tns:WebService1Soap">
+      <soap:address location="https://localhost:44301/WebService1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebService1Soap12" binding="tns:WebService1Soap12">
+      <soap12:address location="https://localhost:44301/WebService1.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
